@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:isScrollContainer="true"
+            android:orientation="vertical"
+            tools:context=".MainActivity"
+            android:padding="24dp">
+
+            <TextView
+                style="@style/AppHeaders"
+                android:text="@string/name_tag" />
+
+            <EditText
+                android:id="@+id/customer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@android:string/autofill"
+                android:backgroundTint="@color/colorAccent"
+                android:fontFamily="sans-serif-light"
+                android:hint="@string/enter_name_tag"
+                android:inputType="textPersonName"
+                android:textAllCaps="true"
+                android:textColor="@android:color/darker_gray"
+                android:textColorHint="@android:color/darker_gray"
+                tools:targetApi="O_MR1" />
+
+            <TextView
+                style="@style/AppHeaders"
+                android:layout_marginTop="16dp"
+                android:text="@string/toppings" />
+
+            <CheckBox
+                android:id="@+id/topping_one"
+                style="@style/AppCheckBox"
+                android:buttonTint="@color/colorAccent"
+                android:onClick="addToppingOne"
+                android:text="@string/topping_one"
+                tools:targetApi="LOLLIPOP" />
+
+            <CheckBox
+                android:id="@+id/topping_two"
+                style="@style/AppCheckBox"
+                android:buttonTint="@color/colorAccent"
+                android:onClick="addToppingTwo"
+                android:text="@string/topping_two"
+                tools:targetApi="LOLLIPOP" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/separatorGray" />
+
+            <TextView
+                style="@style/AppHeaders"
+                android:layout_marginTop="16dp"
+                android:text="@string/quantity" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/decrement_button"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/info_background"
+                    android:onClick="decrement"
+                    android:text="@string/minus"
+                    android:textColor="@color/blueButtonText"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/quantity_value"
+                    style="@style/AppText"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="@string/value" />
+
+
+                <Button
+                    android:id="@+id/increment_button"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/info_background"
+                    android:onClick="increment"
+                    android:text="@string/plus"
+                    android:textColor="@color/blueButtonText"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separatorGray" />
+
+            <TextView
+                android:id="@+id/price"
+                style="@style/AppHeaders"
+                android:layout_marginTop="16dp"
+                android:text="@string/price" />
+
+            <TextView
+                android:id="@+id/price_and_order_summary"
+                style="@style/AppText"
+                android:layout_marginTop="8dp"
+                android:text="@string/price_value" />
+
+            <View
+                style="@style/AppDivider" />
+
+            <!-- It is to provide button blocking the content of list -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="56dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/bottomNavigation"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/bottom_total_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/AppText"
+            android:gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text=""
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:id="@+id/bottom_price"
+            style="@style/AppText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_toEndOf="@+id/bottom_total_tag"
+            android:layout_toRightOf="@+id/bottom_total_tag"
+            android:text="" />
+
+        <Button
+            android:id="@+id/check_total_button"
+            android:layout_width="wrap_content"
+            android:onClick="orderSubmit"
+            android:text="@string/submit"
+            style="@style/AppButton"
+            android:background="@drawable/high_emphasis_button"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/blueButtonText"
+            android:layout_toLeftOf="@id/cancel_button"
+            android:layout_toStartOf="@id/cancel_button"/>
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:text="@string/cancel"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            style="@style/AppButton"
+            android:onClick="cancelOrder"
+            android:textColor="@color/blueButtonBackground"
+            android:background="@drawable/medium_emphasis_button"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</RelativeLayout>

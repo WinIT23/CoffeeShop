@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1C1C1C</color>
+    <color name="colorPrimaryDark">#1C1C1C</color>
+    <color name="bottomNavigation">#2A2A2A</color>
+    <color name="separatorGray">#5C5C5C</color>
+    <color name="colorAccent">#507ABB</color>
+    <color name="greenButtonText">#6BB16D</color>
+    <color name="greenButtonBackground">#3A6F3C</color>
+    <color name="blueButtonText">#8aa7d3</color>
+    <color name="blueButtonBackground">#3E4E75</color>
+    <color name="redButtonText">#D38A8A</color>
+    <color name="redButtonBackground">#643E3E</color>
+    <color name="logoAndroid">#A4C639</color>
+</resources>
